@@ -1,5 +1,5 @@
 [package]
-name = "near-safe"
+name = "near-safe-factory"
 version = "1.0.0"
 authors = ["Yash Sharma <yash@iamyxsh.dev>"]
 edition = "2021"
@@ -21,3 +21,7 @@ overflow-checks = true
 
 [workspace]
 members = ["sandbox-rs"]
+
+[package.metadata.commands]
+build = "./build.sh"
+build_deploy = "./build.sh && ./deploy.sh"

@@ -5,8 +5,8 @@ use workspaces::{Account, Contract};
 
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
-    let wasm_arg: &str = &(env::args().nth(1).unwrap());
-    let wasm_filepath = fs::canonicalize(env::current_dir()?.join(wasm_arg))?;
+    // let wasm_arg: &str = &(env::args().nth(1).unwrap());
+    let wasm_filepath = fs::canonicalize(env::current_dir()?.join("../target/wasm32-unknown-unknown/release/hello_near.wasm"))?;
 
     let worker = workspaces::sandbox().await?;
     let wasm = std::fs::read(wasm_filepath)?;
